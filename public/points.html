@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <ul class="navbar-links" id="navbar-links">
+        <!-- logo -->
+        <div class="navbar-logo">
+          <li>
+            <img
+              id="home-logo"
+              src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2019/07/cropped-site_symbol-01.png"
+              alt=""
+              height="50px"
+            />
+          </li>
+        </div>
+
+        <!-- center links -->
+
+        <li><a href="#" id="directory">Directory</a></li>
+        <li><a href="#" id="talent">Talent Turnstile</a></li>
+        <li><a href="#" id="myaccount">My Account</a></li>
+        <li><a href="#" id="points">Points</a></li>
+        <li><a href="#" id="signout">Sign Out</a></li>
+      </ul>
+    </nav>
+    <!-- message bar -->
+    <div id="message_bar"></div>
+    <div class="new-content">
+      <div id="admin-status" class="admin-status-banner">
+        <span id="admin-status-text">Admin View</span>
+      </div>
+      <header>
+        <h1 id="point_header"></h1>
+      </header>
+      <!-- Admin Only - Penalty Point System -->
+      <div id="penalty_container" class="container" style="display: none">
+        <h2>Employee Penalty Point System</h2>
+        <table id="penaltyTable">
+          <tr>
+            <th>Name</th>
+            <td>
+              <select name="Name" id="employee_names">
+                <option value="">name1</option>
+
+                <!-- use JS to make this list from the database -->
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td><input type="date" id="date1" /></td>
+          </tr>
+          <tr>
+            <th>Reason</th>
+            <td>
+              <select name="Reason" id="penalty_name">
+                <option value="Missed Shift">Missed Shift</option>
+                <option value="Dress Code">Dress Code</option>
+                <option value="Caused a Dispute">Caused a Dispute</option>
+                <option value="Breaking Equipment">Breaking Equipment</option>
+                <option value="Poor Performance">Poor Performance</option>
+                <option value="Other">Other</option>
+                <!-- add more values here -->
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Penalty Weight (1-10)</th>
+            <td><input type="number" id="penaltyWeight" min="1" max="10" /></td>
+          </tr>
+          <tr>
+            <th>Further Information</th>
+            <td><input type="text" id="moreinfo" /></td>
+          </tr>
+        </table>
+        <button id="penaltyButton">Submit</button>
+      </div>
+      <br />
+      <br />
+
+      <!-- Rewards Points -->
+
+      <div id="point_container" class="container">
+        <h2 id="NumSubmission"></h2>
+        <div id="donutChart">
+          <canvas id="rewardChart" width="500" height="500"></canvas>
+        </div>
+        <h2>Employee Rewards System</h2>
+        <table id="pointTable">
+          <tr>
+            <th>Name</th>
+            <td>
+              <select name="Name" id="employee_name2">
+                <option value="">name1</option>
+                <option value="">name2</option>
+                <!-- use JS to make this list from the database -->
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td><input type="date" id="date2" /></td>
+          </tr>
+          <tr>
+            <th>Reason</th>
+            <td>
+              <select name="Reason" id="reward_name">
+                <option value="Great Teamwork">Great Teamwork</option>
+                <option value="Great Leadership">Great Leadership</option>
+                <option value="Helped a Student">Helped a Student</option>
+                <option value="Solved a Dispute">Solved a Dispute</option>
+                <option value="Oustanding Performance">
+                  Outstanding Performance
+                </option>
+                <option value="Other">Other</option>
+                <!-- add more values here -->
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Further Information</th>
+            <td><input type="text" id="rewardinfo" /></td>
+          </tr>
+        </table>
+        <button type="submit" id="rewardButton">Submit</button>
+      </div>
+
+      <!-- Point Output -->
+
+      <div id="allPointDisplay">
+        <div id="pointsDisplayAll">
+          <h3>Penalty Points:</h3>
+          <div id="pointsDisplay">hi</div>
+          <div id="pointTotal"></div>
+        </div>
+        <div id="shoutoutsAll">
+          <h3>Employee Shoutouts:</h3>
+          <div id="shoutoutDisplay"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

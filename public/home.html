@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rec Well Staff Website</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Link to the external JavaScript file for the navigation bar -->
+  </head>
+
+  <body>
+    <!-- modals -->
+
+    <!-- log in/sign up modal -->
+    <div class="modal" id="loginModal">
+      <div class="modal-logo">
+        <a href="#" id="logo"
+          ><img
+            src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2019/07/cropped-site_symbol-01.png"
+            alt=""
+            height="100px"
+        /></a>
+      </div>
+      <h2>Please Log In.</h2>
+      <form action="#" id="loginform">
+        <div class="form-group">
+          <label for="l_username">Email:</label>
+          <input
+            type="email"
+            id="l_username"
+            name="l_username"
+            required
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="l_password">Password:</label>
+          <input
+            type="password"
+            id="l_password"
+            name="l_password"
+            required
+            placeholder="Enter Password"
+          />
+        </div>
+        <!-- error message -->
+        <div class="error_message1"></div>
+        <div class="form-group">
+          <input type="submit" value="Log In" id="log_in_button" />
+
+          <button type="button" id="new_user">New User?</button>
+        </div>
+      </form>
+    </div>
+    <!-- sign up -->
+    <div class="modal" id="signupModal">
+      <div class="modal-logo">
+        <a href="#" id="logo"
+          ><img
+            src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2019/07/cropped-site_symbol-01.png"
+            alt=""
+            height="100px"
+        /></a>
+        <h2>Please Sign Up.</h2>
+      </div>
+      <form action="#" id="signupform">
+        <div class="form-group">
+          <label for="f_name">First Name:</label>
+          <input
+            type="text"
+            id="f_name"
+            name="f_name"
+            required
+            placeholder="Enter First Name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="l_name">Last Name:</label>
+          <input
+            type="text"
+            id="l_name"
+            name="l_name"
+            required
+            placeholder="Enter Last Name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="s_username">Email:</label>
+          <input
+            type="email"
+            id="s_username"
+            name="s_username"
+            required
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="s_password">Password:</label>
+          <input
+            type="password"
+            id="s_password"
+            name="s_password"
+            required
+            placeholder="Enter Password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="s_password">Confirm Password:</label>
+          <input
+            type="password"
+            id="c_s_password"
+            name="c_s_password"
+            placeholder="Confirm Password"
+            required
+            oninput="checkPasswordMatch()"
+          />
+        </div>
+        <div id="passwordMatchMessage" class="passwordMatch"></div>
+        <div class="form-group">
+          <input type="submit" value="Sign Up" id="sign_up_button" />
+          <button type="button" id="old_user">Already a User</button>
+        </div>
+      </form>
+      <!-- error message -->
+      <div class="error_message2"></div>
+    </div>
+
+    <div id="main-content">
+      <div class="modal-hidden" id="modal-hidden">
+        <!-- Navigation bar -->
+        <nav class="navbar">
+          <ul class="navbar-links" id="navbar-links">
+            <!-- logo -->
+            <div class="navbar-logo">
+              <li>
+                <img
+                  id="home-logo"
+                  src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2019/07/cropped-site_symbol-01.png"
+                  alt=""
+                  height="50px"
+                />
+              </li>
+            </div>
+
+            <!-- center links -->
+
+            <li><a href="#" id="directory">Directory</a></li>
+            <li><a href="#" id="talent">Talent Turnstile</a></li>
+            <li><a href="#" id="myaccount">My Account</a></li>
+            <li><a href="#" id="points">Points</a></li>
+            <li><a href="#" id="signout">Sign Out</a></li>
+          </ul>
+        </nav>
+
+        <!-- message bar -->
+        <div id="message_bar"></div>
+        <div class="new-content">
+          <!-- Content will be dynamically inserted here -->
+          <div id="admin-status" class="admin-status-banner">
+            <span id="admin-status-text">Admin View</span>
+          </div>
+          <header>
+            <h1>Welcome Rec Well Staff!</h1>
+          </header>
+
+          <!-- links to home page content -->
+          <div class="container">
+            <div class="top-links">
+              <ul>
+                <li><a href="#shoutouts">Employee Rewards</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#updates">Updates</a></li>
+              </ul>
+            </div>
+            <br />
+
+            <img
+              width="100%"
+              src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2023/10/09345_08292023_recwellmanagers_03KW-2048x640.jpg"
+              alt=""
+              height="10%"
+            />
+
+            <div class="column1">
+              <h2>10 Most Recent Employee Rewards</h2>
+              <h3>Thank you for your hard work!</h3>
+
+              <div id="shoutouts"></div>
+            </div>
+            <div class="column2">
+              <h2>
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/019/787/073/non_2x/link-flat-on-transparent-background-free-png.png"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />Employee Forms<img
+                  src="https://static.vecteezy.com/system/resources/previews/019/787/073/non_2x/link-flat-on-transparent-background-free-png.png"
+                  alt=""
+                  height="30px"
+                  width="30px"
+                />
+              </h2>
+
+              <a
+                id="forms"
+                href="https://forms.office.com/pages/responsepage.aspx?id=IYOmLNoOCEmIskJKjLSw-bqqepPDIi1OoOdCzD27aPFUNFJZTlBQRTZaNzZYQVIyM0ZBRks5QlFCNyQlQCN0PWcu"
+                >Professional Development Bookings</a
+              >
+              <br />
+              <a
+                id="forms"
+                href="https://forms.office.com/pages/responsepage.aspx?id=IYOmLNoOCEmIskJKjLSw-bqqepPDIi1OoOdCzD27aPFUNEdLRzZOVUdZWUVJRkY4V1IzSklYWlRDUSQlQCN0PWcu"
+                >Absence Request Form</a
+              >
+              <br />
+              <a
+                id="forms"
+                href="https://forms.office.com/pages/responsepage.aspx?id=IYOmLNoOCEmIskJKjLSw-bqqepPDIi1OoOdCzD27aPFUNEdLRzZOVUdZWUVJRkY4V1IzSklYWlRDUSQlQCN0PWcu"
+                >Missed Clock In</a
+              >
+              <br />
+              <a
+                id="forms"
+                href="https://forms.office.com/pages/responsepage.aspx?id=IYOmLNoOCEmIskJKjLSw-bqqepPDIi1OoOdCzD27aPFUNEdLRzZOVUdZWUVJRkY4V1IzSklYWlRDUSQlQCN0PWcu"
+                >Spring Break Availability</a
+              >
+            </div>
+            <div class="column3" id="updates">
+              <h2>Employee Updates</h2>
+              <div class="update-card">
+                <h3>2024 Annual Diversity Forum</h3>
+                <p>
+                  Thank you for all staff who participated in this year's
+                  diversity forum. It was great to have such a large turn out.
+                  Thank you for all professional staff who dedicated time to
+                  successfully running this event. We cannot wait to see you all
+                  again next year!
+                </p>
+              </div>
+              <div class="update-card">
+                <h3>Annual Reports</h3>
+                <a href="https://recwell.wisc.edu/reports/">View Reports</a>
+                <p>
+                  Check out our many annual reports to learn more about where
+                  you work. Reports vary back until 2013, allowing you to see
+                  how Rec Well has changed greatly!
+                </p>
+              </div>
+              <div class="update-card">
+                <h3>SRLC Food Drive</h3>
+                <a href="https://recwell.wisc.edu/reports/">View Reports</a>
+                <p>
+                  The annual SRLC food drive has begun. Who will bring home the
+                  trophy? Each department will compete for the coveted food
+                  drive trophy. Make sure to bring in donations to your next
+                  shift. Donation bins are located in the student break room!
+                </p>
+              </div>
+              <div class="update-card">
+                <h3>Rec Well Student Job Openings</h3>
+                <a
+                  href="https://studentjobs.hr.wisc.edu/en-us/search/?job-mail-subscribe-privacy=agree&search-keyword=Rec%20Well"
+                  >View Open Positions</a
+                >
+                <p>
+                  Send this link to friends who are interested in working at Rec
+                  Well! Full position descriptions, job qualifications and
+                  responsibilities, pay details, and application instructions
+                  are available on the Student Jobs Platform. Please review the
+                  information above for a general overview of our entry-level
+                  positions.
+                </p>
+              </div>
+              <div class="update-card">
+                <h3>Summer Camp 2024 Opportunities</h3>
+                <a href="https://summercamp.recwell.wisc.edu/">Summer Camp</a>
+                <p>
+                  Let us know if you are available to work some of the summer
+                  camp 2024 opportunities!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <footer>
+            <p>
+              &copy; 2024 RecWell Professional Development. All rights reserved.
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="js.js" defer></script>
+    <script>
+      // TODO
+      // Copy **only** your firebaseConfig from Google Firebae and add it below
+      const firebaseConfig = {
+        apiKey: "AIzaSyDUF0yblD2mxOTH2_lMfAq3n2N3w0TfE7c",
+        authDomain: "rec-well-staff-w.firebaseapp.com",
+        projectId: "rec-well-staff-w",
+        storageBucket: "rec-well-staff-w.appspot.com",
+        messagingSenderId: "102788649386",
+        appId: "1:102788649386:web:68078be005801434e3dbd3",
+      };
+
+      // Your web app's Firebase configuration
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // define authentication variable
+      let auth = firebase.auth();
+      let db = firebase.firestore();
+      let storage = firebase.storage();
+
+      // define a storage reference
+      let ref = firebase.storage().ref();
+    </script>
+  </body>
+</html>

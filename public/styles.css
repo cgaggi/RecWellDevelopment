@@ -1,0 +1,692 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Set the flex direction to column */
+  /* height: 500px; Set a fixed height for the container */
+  overflow-y: auto; /* Add scrollbars when content overflows vertically */
+}
+
+.top-links {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  max-width: 600px; /* Set a maximum width for responsiveness */
+  margin: auto; /* Center the element */
+}
+
+.top-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; /* Remove default padding */
+}
+
+.top-links ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.top-links ul li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.top-links ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0px 20px;
+  display: inline-block; /* Add display property */
+}
+
+.top-links ul li a:hover {
+  color: red;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .top-links {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+.column1,
+.column2,
+.column3 {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #333;
+  box-shadow: 3px 3px 3px black;
+}
+
+.column1 h2,
+.column2 h2,
+.column3 h2,
+.column1 h3 {
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(22, 22, 22);
+  color: rgb(218, 19, 19);
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main,
+footer {
+  padding: 20px;
+}
+
+.navbar {
+  background-color: rgb(22, 22, 22);
+  border: 8px solid rgb(74, 3, 3); /* Add red border to the navbar */
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+}
+
+.navbar .navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-links:not(.navbar-logo) {
+  margin: 10px; /* Add spacing between menu items */
+}
+
+.navbar .navbar-links li a:not(.navbar-logo) {
+  color: white;
+  text-decoration: none;
+  padding: 20px 15px;
+}
+
+.navbar .navbar-links li a:hover {
+  background-color: red;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.2); /* You can adjust the scale factor as needed */
+}
+
+@media screen and (max-width: 600px) {
+  .navbar .navbar-toggle {
+    display: block;
+    float: right;
+    cursor: pointer;
+    padding: 16px 20px;
+  }
+
+  .navbar .navbar-links {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position the dropdown menu below the navbar */
+    left: 0;
+    background-color: rgb(22, 22, 22);
+  }
+
+  .navbar .navbar-links.active {
+    display: flex; /* Show the menu when burger menu is clicked */
+  }
+
+  .navbar .navbar-links li {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.new-content {
+  border: 8px solid rgb(74, 3, 3); /* Add red border to the navbar */
+}
+
+#signout {
+  background-color: grey;
+}
+#signout:hover {
+  background-color: red;
+}
+
+#message_bar {
+  background-color: white;
+  color: #555;
+  display: none;
+  text-align: center;
+}
+
+.burger-menu {
+  cursor: pointer;
+  display: none; /* Initially hidden for larger screens */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  transition: color 0.3s ease;
+  font-family: "Radikal-Regular", "Helvetica Neue", "Helvetica", "Arial",
+    "sans-serif";
+}
+
+h1:hover {
+  color: #dbcdc8; /* New color on hover */
+}
+
+/* log in page css */
+.modal-body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the modal body takes up the full viewport height */
+}
+
+.modal {
+  background-color: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(245, 243, 243, 0.5);
+  max-width: 400px;
+  margin: 100px auto; /* Center the modal horizontally */
+}
+
+.modal h2 {
+  text-align: center;
+  color: red;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group input[type="submit"] {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+  width: 30%;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: rgb(123, 6, 6);
+}
+
+.modal-logo {
+  text-align: center;
+}
+
+h2 {
+  color: red;
+}
+
+p {
+  color: white;
+}
+
+/* Hide the main content and navigation bar by default */
+#main-content {
+  display: none;
+}
+
+.column2 a {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px; /* Add padding to create space inside the box */
+  border: 2px solid #ffffff; /* Add a border around the box */
+  background-color: black;
+  border-radius: 5px; /* Add rounded corners */
+  color: #ffffff; /* Blue color for the links */
+  width: 30%;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color changes */
+}
+
+.column2 a:hover {
+  background-color: red; /* Darker background color on hover */
+  color: #ffffff; /* White text color on hover */
+}
+
+.update-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.update-card h3 {
+  margin-top: 0;
+}
+
+.update-card p {
+  color: black;
+}
+
+.update-card a {
+  text-decoration: none;
+}
+.update-card a:hover {
+  text-decoration: underline;
+}
+
+/* My Account CSS  */
+#account_container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1c1c1c;
+  box-shadow: 0px 0px 5px rgba(245, 243, 243, 0.5);
+  border-radius: 5px;
+}
+
+#account_container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#account_container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#account_container th,
+#account_container td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+#account_container th {
+  font-weight: bold;
+  text-align: left;
+}
+
+#account_container td {
+  color: black;
+}
+
+#account_container input[type="text"],
+#account_container input[type="tel"],
+#account_container input[type="email"],
+#account_container textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#account_container button {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#account_container button:hover {
+  background-color: #45a049;
+}
+
+/* employee directory css */
+.employee_directory {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.EmployeeCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 270px;
+  margin: 10px;
+  width: 300px;
+  background-color: #1c1c1c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: height 0.3s ease;
+  text-align: center;
+}
+.card-hidden {
+  display: none;
+}
+.EmployeeCard.expanded {
+  height: 370px;
+}
+.EmployeeCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.EmployeeCard-content {
+  padding: 20px;
+}
+
+.employee-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#expand-delete {
+  margin: 10px;
+}
+.employee-phone,
+.employee-bio,
+.employee-department,
+.employee-position {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 3px;
+}
+
+#point_container,
+#penalty_container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1c1c1c;
+  box-shadow: 0px 0px 5px rgba(245, 243, 243, 0.5);
+  border-radius: 5px;
+  align-items: center;
+}
+
+#donutChart {
+  max-width: 300px;
+}
+
+#point_container h1,
+#point_container h2,
+#penalty_container h1,
+#penalty_container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#point_container table,
+#penalty_container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#point_container th,
+#point_container td,
+#penalty_container th,
+#penalty_container td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+#point_container th,
+#penalty_container th {
+  font-weight: bold;
+  text-align: left;
+}
+
+#point_container input[type="text"],
+#point_container input[type="tel"],
+#point_container input[type="email"],
+#point_container textarea,
+#penalty_container input[type="text"],
+#penalty_container input[type="tel"],
+#penalty_container input[type="email"],
+#penalty_container textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#point_container button,
+#penalty_container button {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#point_container button:hover,
+#penalty_container button:hover {
+  background-color: #45a049;
+}
+/* Talent Tunstile CSS */
+.blogContainer {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.blogContainer h1 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+.blogContainer label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: block;
+}
+.blogContainer input[type="file"] {
+  margin-bottom: 10px;
+}
+.blogContainer #postBlog {
+  margin-top: 15px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.blogContainer #postBlog:hover {
+  background-color: green;
+}
+
+.blogContainer #title {
+  width: 70%;
+  height: 30px;
+}
+
+.passwordMatch,
+.error_message1 {
+  margin-top: -10px;
+  text-align: center;
+}
+
+.admin-status-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#filtering {
+  text-align: center;
+  margin-top: -50px;
+}
+
+#staffSearch {
+  margin: 0 10px;
+}
+
+.EmployeeCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  width: 300px;
+  background-color: #1c1c1c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.EmployeeCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for the dropdown menus */
+.select-container {
+  padding: 10px;
+  width: 655px;
+}
+
+/* Style for the dropdown options */
+.select-container select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#email {
+  color: red; /* Text color */
+  font-size: 16px; /* Font size */
+  text-align: center;
+  font-weight: bold; /* Font weight */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+#email:hover {
+  color: #dbcdc8; /* New color on hover */
+}
+
+#output,
+#output h2 {
+  text-align: center;
+  color: red;
+}
+
+.searchStaff {
+  color: black;
+}
+
+/* Card container style */
+.point-card,
+.reward-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Point information style */
+.point-info {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Date style */
+.point-info .point-date {
+  font-weight: bold;
+}
+
+/* Reason style */
+.point-info .point-reason {
+  margin-top: 5px;
+  color: #333;
+}
+
+/* Weight style */
+.point-info .point-weight {
+  margin-top: 5px;
+  color: #555;
+}
+
+#allPointDisplay {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+#pointsDisplayAll,
+#shoutoutsAll {
+  margin: 10px;
+  flex: 1;
+}
+
+#pointTotal {
+  position: sticky;
+  bottom: 0;
+}
+
+#pointsDisplayAll h3,
+#shoutoutsAll h3 {
+  text-align: center;
+}
+
+#filtering {
+  border: 8px solid rgb(74, 3, 3);
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+#filterOptions {
+  display: flex; /* Use flexbox for easy alignment */
+  justify-content: space-between; /* Distribute items equally */
+}
+.filterChoices {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <ul class="navbar-links" id="navbar-links">
+        <!-- logo -->
+        <div class="navbar-logo">
+          <li>
+            <img
+              id="home-logo"
+              src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2019/07/cropped-site_symbol-01.png"
+              alt=""
+              height="50px"
+            />
+          </li>
+        </div>
+
+        <!-- center links -->
+
+        <li><a href="#" id="directory">Directory</a></li>
+        <li><a href="#" id="talent">Talent Turnstile</a></li>
+        <li><a href="#" id="myaccount">My Account</a></li>
+        <li><a href="#" id="points">Points</a></li>
+        <li><a href="#" id="signout">Sign Out</a></li>
+      </ul>
+    </nav>
+    <!-- message bar -->
+    <div id="message_bar"></div>
+    <div class="new-content">
+      <div id="account_container" class="container">
+        <h1 id="NameHeader"></h1>
+        <span id="email"></span>
+        <table id="accountTable">
+          <tr>
+            <th>First Name</th>
+            <td><input type="text" id="account_fname" /></td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td><input type="text" id="account_lname" /></td>
+          </tr>
+          <tr>
+            <th>Position</th>
+            <td>
+              <select class="select-container" id="position">
+                <option value="Manager">Manager</option>
+                <option value="Supervisor">Supervisor</option>
+                <option value="Attendant">Attendant</option>
+                <option value="Personal Trainer">Trainer</option>
+                <option value="Referee">Referee</option>
+                <!-- Add more options as needed -->
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Department</th>
+            <td>
+              <select class="select-container" id="department">
+                <option value="Manager">Manager</option>
+                <option value="Member Services">Member Services</option>
+                <option value="Aquatics">Aquatics</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Sports">Sports</option>
+                <!-- Add more options as needed -->
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Phone Number</th>
+            <td><input type="tel" id="phoneNumber" /></td>
+          </tr>
+
+          <th>Biography</th>
+          <td><textarea id="biography" rows="4"></textarea></td>
+
+          <tr>
+            <th>Image</th>
+            <td>
+              <input type="file" id="imageUpload" accept="image/*" />
+              <!-- Image preview -->
+              <img
+                id="imagePreview"
+                alt=""
+                style="max-width: 200px; max-height: 200px"
+              />
+            </td>
+          </tr>
+        </table>
+        <button id="SaveAccount">Save</button>
+        <div id="account_save_message"></div>
+      </div>
+
+      <div id="account_container" class="container">
+        <h1 id="NameHeader">Add Admin Status</h1>
+        <table id="accountTable">
+          <tr>
+            <th>Is an Admin?</th>
+            <th><span id="adminAccount_status"></span></th>
+          </tr>
+          <tr>
+            <th>First Name</th>
+            <td><input type="text" id="adminAccount_fname" /></td>
+          </tr>
+
+          <tr>
+            <th>Last Name</th>
+            <td><input type="text" id="adminAccount_lname" /></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" id="adminAccount_email" /></td>
+          </tr>
+          <tr>
+            <th>Keyword</th>
+            <td>
+              <input
+                type="text"
+                id="adminAccount_keyword"
+                placeholder="Enter Admin Keyword Provided"
+              />
+            </td>
+          </tr>
+        </table>
+        <button onclick="makeAdmin()">Make Admin</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <ul class="navbar-links" id="navbar-links">
+        <!-- logo -->
+        <div class="navbar-logo">
+          <li>
+            <img
+              id="home-logo"
+              src="https://recwell.wisc.edu/wp-content/uploads/sites/1075/2019/07/cropped-site_symbol-01.png"
+              alt=""
+              height="50px"
+            />
+          </li>
+        </div>
+
+        <!-- center links -->
+
+        <li><a href="#" id="directory">Directory</a></li>
+        <li><a href="#" id="talent">Talent Turnstile</a></li>
+        <li><a href="#" id="myaccount">My Account</a></li>
+        <li><a href="#" id="points">Points</a></li>
+        <li><a href="#" id="signout">Sign Out</a></li>
+      </ul>
+    </nav>
+    <!-- message bar -->
+    <div id="message_bar"></div>
+    <div class="new-content">
+      <div id="admin-status" class="admin-status-banner">
+        <span id="admin-status-text">Admin View</span>
+      </div>
+      <header>
+        <h1>Welcome to The Student Staff Directory</h1>
+      </header>
+      <div>
+        <div id="filtering">
+          <h2 id="searchHeader">Search Features</h2>
+          <div id="filterOptions">
+            <div class="filterChoices">
+              Name:
+              <input
+                id="searchStaff"
+                type="text"
+                oninput="findStaff()"
+                placeholder="Search"
+              />
+            </div>
+            <div class="filterChoices">
+              Position:
+              <select
+                class="directoryPositions"
+                id="directoryPosition"
+                oninput="findStaff()"
+              >
+                <option value="Any">Any</option>
+                <option value="Manager">Manager</option>
+                <option value="Supervisor">Supervisor</option>
+                <option value="Attendant">Attendant</option>
+                <option value="Personal Trainer">Trainer</option>
+                <option value="Referee">Referee</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+            <div class="filterChoices">
+              Department:
+              <select
+                class="directoryDepartments"
+                id="directoryDepartment"
+                oninput="findStaff()"
+              >
+                <option value="Any">Any</option>
+                <option value="Manager">Manager</option>
+                <option value="Member Services">Member Services</option>
+                <option value="Aquatics">Aquatics</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Sports">Sports</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="employee_directory" id="employee_directory"></div>
+    </div>
+  </body>
+</html>
